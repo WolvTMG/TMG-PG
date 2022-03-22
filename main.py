@@ -519,36 +519,36 @@ async def shop5():
         cash = cash - 150
         clear()
         print(f"Sucsesfully healed, your health is now {health} ")
-        await shop4()
+        await shop5()
     elif choice == '1' and cash <= 150:
         clear()
         print("Insufficient Funds")
-        await shop4()
+        await shop5()
     elif choice == '2' and cash >= 300:
         attack = attack + 25
         cash = cash - 300
         clear()
         print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
-        await shop4()
+        await shop5()
     elif choice == '2' and cash <= 80:
         clear()
         print("Insufficient Funds")
-        await shop4()
+        await shop5()
     elif choice == '3' and cash >= 500:
         cash = cash - 500
         subscribe_to_dream = subscribe_to_dream + 5
         print(f"Sucsesfully subscribed to Dream")
-        await shop4()
+        await shop5()
     elif choice == '3' and cash <=500:
         print("Insufficient Funds")
-        await shop4()
+        await shop5()
     elif choice == 'exit':
         clear()
         await arc6()
     else:
         clear()
         print("Please make sure you enter a valid item number (1, 2, 3, exit)\n")
-        await shop4()
+        await shop5()
 
 async def shop4():
     global cash
