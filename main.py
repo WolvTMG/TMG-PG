@@ -210,7 +210,7 @@ async def arc4():
     clear()
     for i in range(rounds):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
-        quest = random.choice(randomizedquests5)
+        quest = random.choice(randomizedquests4)
         luck = random.choice(randomizedluck)
         damage = random.choice(randomizeddamages)
         time.sleep(1)
@@ -273,7 +273,7 @@ async def arc3():
     clear()
     for i in range(rounds):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
-        quest = random.choice(randomizedquests5)
+        quest = random.choice(randomizedquests3)
         luck = random.choice(randomizedluck)
         time.sleep(1)
         ui = input(quest + "attack or run away? ").lower()
@@ -342,7 +342,7 @@ async def arc2():
     clear()
     for i in range(rounds):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
-        quest = random.choice(randomizedquests5)
+        quest = random.choice(randomizedquests2)
         luck = random.choice(randomizedluck)
         time.sleep(1)
         ui = input(quest + "attack or run away? ").lower()
@@ -402,7 +402,7 @@ async def arc1():
     clear()
     for i in range(rounds):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
-        quest = random.choice(randomizedquests5)
+        quest = random.choice(randomizedquests)
         luck = random.choice(randomizedluck)
         time.sleep(1)
         ui = input(quest + "attack or run away? ").lower()
