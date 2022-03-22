@@ -36,6 +36,7 @@ randomizednumbers = [1, 2, 3, 4, 5, 6]
 randomizeddamages = [1, 2, 3, 4, 5, 6]
 randomizedcash = [50, 150, 200, 250]
 randomizedxp = [1, 2, 3, 4, 5, 6]
+randomizedattack = [1, 2, 3, 4]
 
 
 def loops():
@@ -79,7 +80,6 @@ async def arc6():
     global rounds
     global cash
     global damage
-    global randomizedcash
     print("(Arc 6)")
     print("You will now recieve randomized cash")
     time.sleep(2)
@@ -89,14 +89,15 @@ async def arc6():
         quest = random.choice(randomizedquests6)
         luck = random.choice(randomizedluck)
         damage = random.choice(randomizeddamages)
+        rcash = random.choice(randomizedcash)
         time.sleep(1)
         ui = input(quest + "what do you do, attack or run away? ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
             xp = xp + 6
-            attack = attack - 2
-            cash = cash + randomizedcash
+            attack = attack - 3
+            cash = cash + rcash
             time.sleep(2)
             clear()
         elif ui == 'attack' and luck == 'attack' and attack <= 0:
@@ -109,14 +110,14 @@ async def arc6():
             clear()
             print(f"You lost the fight and lose {damage} hp")
             health = health - damage
-            attack = attack - 2
+            attack = attack - 3
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'run':
             clear()
             print("You sucsesfully ran away and gained 3 xp!\n")
             xp = xp + 6
-            cash = cash + randomizedcash
+            cash = cash + rcash
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
@@ -132,7 +133,7 @@ async def arc6():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice5()
+    await arc7()
 
 async def arc5():
     global health
@@ -156,8 +157,8 @@ async def arc5():
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
             xp = xp + 5
-            attack = attack - 2
-            cash = cash + 150
+            attack = attack - 3
+            cash = cash + 100
             time.sleep(2)
             clear()
         elif ui == 'attack' and luck == 'attack' and attack <= 0:
@@ -170,14 +171,14 @@ async def arc5():
             clear()
             print(f"You lost the fight and lose {damage} hp")
             health = health - damage
-            attack = attack - 2
+            attack = attack - 3
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'run':
             clear()
             print("You sucsesfully ran away and gained 3 xp!\n")
             xp = xp + 5
-            cash = cash + 150
+            cash = cash + 100
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
@@ -219,7 +220,7 @@ async def arc4():
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
             xp = xp + 4
             attack = attack - 2
-            cash = cash + 150
+            cash = cash + 80
             time.sleep(2)
             clear()
         elif ui == 'attack' and luck == 'attack' and attack <= 0:
@@ -239,7 +240,7 @@ async def arc4():
             clear()
             print("You sucsesfully ran away and gained 3 xp!\n")
             xp = xp + 4
-            cash = cash + 150
+            cash = cash + 80
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
@@ -281,7 +282,7 @@ async def arc3():
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
             xp = xp + 3
             attack = attack - 2
-            cash = cash + 100
+            cash = cash + 60
             time.sleep(2)
             clear()
         elif ui == 'attack' and luck == 'attack' and attack <= 0:
@@ -301,13 +302,13 @@ async def arc3():
             clear()
             print("You sucsesfully ran away and gained 3 xp!\n")
             xp = xp + 3
-            cash = cash + 100
+            cash = cash + 60
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
             if subscribe_to_dream > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
-                cash = cash + 100
+                cash = cash + 60
                 xp = xp + 3
                 subscribe_to_dream = subscribe_to_dream - 1
                 time.sleep(2)
@@ -543,7 +544,7 @@ async def shop5():
         await shop4()
     elif choice == 'exit':
         clear()
-        await arc5()
+        await arc6()
     else:
         clear()
         print("Please make sure you enter a valid item number (1, 2, 3, exit)\n")
