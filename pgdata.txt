@@ -1,0 +1,28 @@
+arc1 		arc4				arc7
+attack = 1	cash = 80			cash = randomized
+health = 1	xp = 4				health = randomized
+cash = 20	attack = 2			xp = randomized
+xp = 1		health = randomized		attack = randomized
+
+arc2		arc5
+attack = 1	xp = 5
+cash = 40	cash = 100
+xp = 2		health = randomized	
+health = 2	attack = 3
+
+arc3		arc6
+attack = 2	xp = 6
+cash = 60	cash = randomized
+health = 4	health = randomized
+xp = 3		attack = 3
+
+
+
+
+
+bag items
+
+healingpot = 10 hp
+healingpot2 = 25 hp
+healingpot3 = 50 hp
+healingpot4 = 100 hp

@@ -64,14 +64,78 @@ start_new_thread(loops, ())
 start_new_thread(loops2, ())
 
 
-async def arc7():
-    print("arc 7 coming soon")
+async def arc8():
+    print("arc 8 coming soon")
     time.sleep(2)
     print(f"Health: {health}")
     print(f"Attack: {attack}")
     print(f"Experience: {xp}")
     print(f"Cash: {cash}")
     sys.exit()
+
+async def arc7():
+    global health
+    global attack
+    global xp
+    global rounds
+    global cash
+    global damage
+    print("(Arc 7)")
+    print("WARNING, damage, cash, xp and attacks will now be randomized from now on")
+    time.sleep(4)
+    clear()
+    for i in range(rounds):
+        print(f"Health {health}\nAttack: {attack}\nExpperience: {xp}\nCash: {cash}\n")
+        quest = random.choice(randomizedquests6)
+        luck = random.choice(randomizedluck)
+        damage = random.choice(randomizeddamages)
+        rcash = random.choice(randomizedcash)
+        rxp = random.choice(randomizedxp)
+        rattack = random.choice(randomizedattack)
+        time.sleep(1)
+        ui = input(quest + "what do you do, attack or run away? ").lower()
+        if ui == 'attack' and luck == 'attack' and attack > 0:
+            clear()
+            print("You sucsesfully defend against the attacker and gained 3 xp\n")
+            xp = xp + rxp
+            attack = attack - rattack
+            cash = cash + rcash
+            time.sleep(2)
+            clear()
+        elif ui == 'attack' and luck == 'attack' and attack <= 0:
+            clear()
+            print(f"You have no more attacks and you loose {damage} hp")
+            health = health - damage
+            time.sleep(2)
+            clear()
+        elif ui == 'attack' and luck == 'run':
+            clear()
+            print(f"You lost the fight and lose {damage} hp")
+            health = health - damage
+            attack = attack - rattack
+            time.sleep(2)
+            clear()
+        elif ui == 'run' and luck == 'run':
+            clear()
+            print("You sucsesfully ran away and gained 3 xp!\n")
+            xp = xp + rxp
+            cash = cash + rcash
+            time.sleep(2)
+            clear()
+        elif ui == 'run' and luck == 'attack':
+            clear()
+            print(f"The attacker outran you and you lost {damage} hp\n")
+            health = health - damage
+            time.sleep(2)
+            clear()
+        else:
+            clear()
+            print("Answer must be attack or run")
+            rounds = rounds + 1
+            time.sleep(2)
+            clear()
+    time.sleep(2)
+    await arc8()
 
 async def arc6():
     global health
@@ -82,7 +146,7 @@ async def arc6():
     global damage
     print("(Arc 6)")
     print("You will now recieve randomized cash")
-    time.sleep(2)
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health {health}\nAttack: {attack}\nExpperience: {xp}\nCash: {cash}\n")
@@ -133,7 +197,7 @@ async def arc6():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await arc7()
+    await choice6()
 
 async def arc5():
     global health
@@ -143,8 +207,7 @@ async def arc5():
     global cash
     global damage
     print("(Arc 5)")
-    print("WARNING, from now on attacks will be randomized from 1 - 6 damage, this will be the last warning and will continue for future arcs")
-    time.sleep(2)
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
@@ -204,9 +267,8 @@ async def arc4():
     global cash
     global damage
     print("(Arc 4)")
-    print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing")
-    print("WARNING, in arc 4, attacks will now be randomized from 1 - 6 damage to you and you are required 2 attacks to kill enemies")
-    time.sleep(2)
+    print("WARNING, attacks will now be randomized from 1 - 6 damage")
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
@@ -267,9 +329,8 @@ async def arc3():
     global cash
     global subscribe_to_dream
     print("(Arc 3)")
-    print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing")
     print("WARNING, (danger ahead), attacks now deal 4 damage to you and you are required 2 attacks to kill enemies")
-    time.sleep(2)
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
@@ -336,9 +397,8 @@ async def arc2():
     global rounds
     global cash
     print("(Arc 2)")
-    print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing")
     print("WARNING, in arc 2 rewards are doubled but so is damage to your health")
-    time.sleep(2)
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
@@ -398,7 +458,7 @@ async def arc1():
     global cash
     print("(Arc 1)")
     print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing\n")
-    time.sleep(2)
+    time.sleep(4)
     clear()
     for i in range(rounds):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
@@ -448,6 +508,16 @@ async def arc1():
             clear()
     time.sleep(2)
     await choice()
+
+
+async def choice6():
+    y = input("Would you like to visit the shop? ").lower()
+    if y == 'yes':
+        await shop6()
+    elif y == 'no':
+        await arc7()
+    else:
+        await choice6()
 
 
 async def choice5():
@@ -734,6 +804,13 @@ async def shop():
         await shop()
 
 
+async def bag():
+    hpotion = 0
+    hpotion2 = 0
+    hpotion3 = 0
+    hpotion4 = 0
+
+
 # async def enchants():
 #     global enchantments
 #     global cash
@@ -806,13 +883,13 @@ def clear():
 async def start():
     global begin
     global dev
-    con1 = input("Welcome to camp, this is your first time so make sure to figure out the ropes by the end of the day, got it, " + begin +"? ").lower()
+    con1 = input("Welcome to the game, are you ready to begin your adventure, " + begin +"? ").lower()
     if con1 == 'yes':
-        print("Prepare for war " + begin +"!\n")
         clear()
         await arc1()
     elif con1 == 'no':
         print("Come back when you're ready")
+        time.sleep(2)
         sys.exit()
     elif con1 == 'devmode':
         dev = dev + 1
