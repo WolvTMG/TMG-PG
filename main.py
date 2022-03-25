@@ -11,7 +11,7 @@ health = 10
 attack = 10
 xp = 0
 cash = 100
-rounds = 5
+gameround = 1
 subscribe_to_dream = 0
 dev = 0
 
@@ -37,6 +37,15 @@ randomizeddamages = [1, 2, 3, 4, 5, 6]
 randomizedcash = [50, 150, 200, 250]
 randomizedxp = [1, 2, 3, 4, 5, 6]
 randomizedattack = [1, 2, 3, 4]
+
+rounds = 5
+rounds2 = 5
+rounds3 = 5
+rounds4 = 5
+rounds5 = 5
+rounds6 = 5
+rounds7 = 5
+rounds8 = 5
 
 
 def loops():
@@ -80,11 +89,13 @@ async def arc7():
     global rounds
     global cash
     global damage
+    global gameround
+    gameround = gameround + 1
     print("(Arc 7)")
     print("WARNING, damage, cash, xp and attacks will now be randomized from now on")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds7):
         print(f"Health {health}\nAttack: {attack}\nExpperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests6)
         luck = random.choice(randomizedluck)
@@ -128,6 +139,9 @@ async def arc7():
             health = health - damage
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -144,11 +158,13 @@ async def arc6():
     global rounds
     global cash
     global damage
+    global gameround
+    gameround = gameround + 1
     print("(Arc 6)")
     print("You will now recieve randomized cash")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds6):
         print(f"Health {health}\nAttack: {attack}\nExpperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests6)
         luck = random.choice(randomizedluck)
@@ -190,6 +206,9 @@ async def arc6():
             health = health - damage
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -206,10 +225,12 @@ async def arc5():
     global rounds
     global cash
     global damage
+    global gameround
+    gameround = gameround + 1
     print("(Arc 5)")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds5):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests5)
         luck = random.choice(randomizedluck)
@@ -250,6 +271,9 @@ async def arc5():
             health = health - damage
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -266,11 +290,13 @@ async def arc4():
     global rounds
     global cash
     global damage
+    global gameround
+    gameround = gameround + 1
     print("(Arc 4)")
     print("WARNING, attacks will now be randomized from 1 - 6 damage")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds4):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests4)
         luck = random.choice(randomizedluck)
@@ -311,6 +337,9 @@ async def arc4():
             health = health - damage
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -328,11 +357,13 @@ async def arc3():
     global rounds
     global cash
     global subscribe_to_dream
+    global gameround
+    gameround = gameround + 1
     print("(Arc 3)")
     print("WARNING, (danger ahead), attacks now deal 4 damage to you and you are required 2 attacks to kill enemies")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds3):
         print(f"Health {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests3)
         luck = random.choice(randomizedluck)
@@ -380,6 +411,9 @@ async def arc3():
                 health = health - 4
                 time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -396,11 +430,13 @@ async def arc2():
     global xp
     global rounds
     global cash
+    global gameround
+    gameround = gameround + 1
     print("(Arc 2)")
     print("WARNING, in arc 2 rewards are doubled but so is damage to your health")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds2):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests2)
         luck = random.choice(randomizedluck)
@@ -440,6 +476,9 @@ async def arc2():
             health = health - 2
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            clear()
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -456,6 +495,8 @@ async def arc1():
     global xp
     global rounds
     global cash
+    global gameround
+    gameround = gameround + 1
     print("(Arc 1)")
     print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing\n")
     time.sleep(4)
@@ -501,6 +542,7 @@ async def arc1():
             time.sleep(2)
             clear()
         elif ui == 'bag':
+            clear()
             await bag()
         else:
             clear()
