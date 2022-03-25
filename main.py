@@ -93,7 +93,7 @@ async def arc7():
         rxp = random.choice(randomizedxp)
         rattack = random.choice(randomizedattack)
         time.sleep(1)
-        ui = input(quest + "what do you do, attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
@@ -155,7 +155,7 @@ async def arc6():
         damage = random.choice(randomizeddamages)
         rcash = random.choice(randomizedcash)
         time.sleep(1)
-        ui = input(quest + "what do you do, attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
@@ -215,7 +215,7 @@ async def arc5():
         luck = random.choice(randomizedluck)
         damage = random.choice(randomizeddamages)
         time.sleep(1)
-        ui = input(quest + "what do you do, attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
@@ -276,7 +276,7 @@ async def arc4():
         luck = random.choice(randomizedluck)
         damage = random.choice(randomizeddamages)
         time.sleep(1)
-        ui = input(quest + "what do you do, attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
@@ -337,7 +337,7 @@ async def arc3():
         quest = random.choice(randomizedquests3)
         luck = random.choice(randomizedluck)
         time.sleep(1)
-        ui = input(quest + "attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == 'attack' and attack > 0:
             clear()
             print("You sucsesfully defend against the attacker and gained 3 xp\n")
@@ -405,7 +405,7 @@ async def arc2():
         quest = random.choice(randomizedquests2)
         luck = random.choice(randomizedluck)
         time.sleep(1)
-        ui = input(quest + "attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == "attack" and attack > 0:
             clear()
             print("You sucsesfully defended against the attacker and gained 2 xp\n")
@@ -465,7 +465,7 @@ async def arc1():
         quest = random.choice(randomizedquests)
         luck = random.choice(randomizedluck)
         time.sleep(1)
-        ui = input(quest + "attack or run away? ").lower()
+        ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
         if ui == 'attack' and luck == "attack" and attack > 0:
             clear()
             print("You sucsesfully defended against the attacker and gained 1 xp\n")
@@ -500,6 +500,8 @@ async def arc1():
             health = health - 1
             time.sleep(2)
             clear()
+        elif ui == 'bag':
+            await bag()
         else:
             clear()
             print("Answer must be attack or run")
@@ -566,14 +568,59 @@ async def choice():
         await choice()
 
 
-async def shop6():
+async def shop7():
     global cash
     global health
     global attack
     print(f"Balance: {cash}\n")
     time.sleep(3)
-    print("no shop for arc 6 yet")
-    await arc7()
+    print("no shop for arc 7 yet")
+    await arc8()
+
+async def shop6():
+    global cash
+    global health
+    global attack
+    global subscribe_to_dream
+    print(f"Balance: {cash}\n")
+    print("WARNING, purchases are 1 time, 1 only, no refunds\n")
+    time.sleep(3)
+    choice = input("Mega Heal (15 hp): 150$ (1)\n\nMega Attack Boost (Rare, +25 attacks): 300$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    if choice == '1' and cash >= 150:
+        health = health + 15
+        cash = cash - 150
+        clear()
+        print(f"Sucsesfully healed, your health is now {health} ")
+        await shop6()
+    elif choice == '1' and cash <= 150:
+        clear()
+        print("Insufficient Funds")
+        await shop6()
+    elif choice == '2' and cash >= 300:
+        attack = attack + 25
+        cash = cash - 300
+        clear()
+        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        await shop6()
+    elif choice == '2' and cash <= 80:
+        clear()
+        print("Insufficient Funds")
+        await shop6()
+    elif choice == '3' and cash >= 500:
+        cash = cash - 500
+        subscribe_to_dream = subscribe_to_dream + 5
+        print(f"Sucsesfully subscribed to Dream")
+        await shop6()
+    elif choice == '3' and cash <=500:
+        print("Insufficient Funds")
+        await shop6()
+    elif choice == 'exit':
+        clear()
+        await arc7()
+    else:
+        clear()
+        print("Please make sure you enter a valid item number (1, 2, 3, exit)\n")
+        await shop6()
 
 async def shop5():
     global cash
@@ -805,10 +852,61 @@ async def shop():
 
 
 async def bag():
+    global health
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global cash
     hpotion = 0
     hpotion2 = 0
     hpotion3 = 0
     hpotion4 = 0
+    ui = input(f"Healing Potion (10hp): {hpotion}\nHealing Potion 2 (25hp): {hpotion2}\nHealing Potion 3 (50hp): {hpotion3}\nHealing Potion 4 (100hp): {hpotion4}\nExit Bag (exit)\n\n")
+    if ui == '1' and hpotion >= 1:
+        hpotion = hpotion - 1
+        health = health + 10
+        print("Sucsesfully used item heal")
+        print(f"Health: {health}")
+        time.sleep(2)
+        await bag()
+    elif ui == '1' and hpotion <= 1:
+        print("Insufficent Items")
+        time.sleep(2)
+        await bag()
+    elif ui == '2' and hpotion2 >= 1:
+        hpotion2 = hpotion2 - 1
+        health = health + 25
+        print("Sucsesfully used item heal")
+        print(f"Health: {health}")
+    elif ui == '2' and hpotion2 <= 1:
+        print("Insufficent Items")
+        time.sleep(2)
+        await bag()
+    elif ui == '3' and hpotion3 >= 1:
+        hpotion3 = hpotion3 - 1
+        health = health + 50
+        print("Sucsesfully used item heal")
+        print(f"Health: {health}")
+        time.sleep(2)
+        await bag()
+    elif ui == '3' and hpotion3 <= 1:
+        print("Insufficent Items")
+        time.sleep(2)
+        await bag()
+    elif ui == '4' and hpotion4 >= 1:
+        hpotion4 = hpotion4 - 1
+        health = health + 100
+        print("Sucsesfully used item heal")
+        print(f"Health: {health}")
+        time.sleep(2)
+        await bag()
+    elif ui == '4' and hpotion4 <= 1:
+        print("Insufficent Items")
+        time.sleep(2)
+        await bag()
+    elif ui == 'exit':
+        print("Alright")
 
 
 # async def enchants():
