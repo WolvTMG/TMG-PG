@@ -48,6 +48,13 @@ rounds7 = 5
 rounds8 = 5
 
 
+hpotion = 0
+hpotion2 = 0
+hpotion3 = 0
+hpotion4 = 0
+apotion = 0
+
+
 def loops():
     while True:
         if health <= 0:
@@ -90,6 +97,7 @@ async def arc7():
     global cash
     global damage
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 7)")
     print("WARNING, damage, cash, xp and attacks will now be randomized from now on")
@@ -134,11 +142,19 @@ async def arc7():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print(f"The attacker outran you and you lost {damage} hp\n")
-            health = health - damage
-            time.sleep(2)
-            clear()
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + rcash
+                xp = xp + rxp
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print(f"The attacker outran you and you lost {damage} hp\n")
+                health = health - damage
+                time.sleep(2)
+            clear() 
         elif ui == 'bag':
             clear()
             await bag()
@@ -159,6 +175,7 @@ async def arc6():
     global cash
     global damage
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 6)")
     print("You will now recieve randomized cash")
@@ -201,10 +218,18 @@ async def arc6():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print(f"The attacker outran you and you lost {damage} hp\n")
-            health = health - damage
-            time.sleep(2)
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + rcash
+                xp = xp + 6
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print(f"The attacker outran you and you lost {damage} hp\n")
+                health = health - damage
+                time.sleep(2)
             clear()
         elif ui == 'bag':
             clear()
@@ -226,6 +251,7 @@ async def arc5():
     global cash
     global damage
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 5)")
     time.sleep(4)
@@ -266,10 +292,18 @@ async def arc5():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print(f"The attacker outran you and you lost {damage} hp\n")
-            health = health - damage
-            time.sleep(2)
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + 100
+                xp = xp + 5
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print(f"The attacker outran you and you lost {damage} hp\n")
+                health = health - damage
+                time.sleep(2)
             clear()
         elif ui == 'bag':
             clear()
@@ -291,6 +325,7 @@ async def arc4():
     global cash
     global damage
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 4)")
     print("WARNING, attacks will now be randomized from 1 - 6 damage")
@@ -332,10 +367,18 @@ async def arc4():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print(f"The attacker outran you and you lost {damage} hp\n")
-            health = health - damage
-            time.sleep(2)
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + 80
+                xp = xp + 4
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print(f"The attacker outran you and you lost {damage} hp\n")
+                health = health - damage
+                time.sleep(2)
             clear()
         elif ui == 'bag':
             clear()
@@ -431,6 +474,7 @@ async def arc2():
     global rounds
     global cash
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 2)")
     print("WARNING, in arc 2 rewards are doubled but so is damage to your health")
@@ -471,10 +515,18 @@ async def arc2():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print("The attacker outran you and you lost 2 hp\n")
-            health = health - 2
-            time.sleep(2)
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + 40
+                xp = xp + 2
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print("The attacker outran you and you lost 2 hp\n")
+                health = health - 2
+                time.sleep(2)
             clear()
         elif ui == 'bag':
             clear()
@@ -496,6 +548,7 @@ async def arc1():
     global rounds
     global cash
     global gameround
+    global subscribe_to_dream
     gameround = gameround + 1
     print("(Arc 1)")
     print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing\n")
@@ -536,10 +589,18 @@ async def arc1():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            clear()
-            print("The attacker outran you and you lost 1 hp\n")
-            health = health - 1
-            time.sleep(2)
+            if subscribe_to_dream > 0:
+                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                cash = cash + 20
+                xp = xp + 1
+                subscribe_to_dream = subscribe_to_dream - 1
+                time.sleep(2)
+                clear()
+            else:
+                clear()
+                print("The attacker outran you and you lost 1 hp\n")
+                health = health - 1
+                time.sleep(2)
             clear()
         elif ui == 'bag':
             clear()
@@ -627,22 +688,22 @@ async def shop6():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (15 hp): 150$ (1)\n\nMega Attack Boost (Rare, +25 attacks): 300$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
-    if choice == '1' and cash >= 150:
-        health = health + 15
-        cash = cash - 150
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    if choice == '1' and cash >= 120:
+        cash = cash - 120
+        hpotion2 = hpotion2 + 1
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (10hp)")
         await shop6()
-    elif choice == '1' and cash <= 150:
+    elif choice == '1' and cash <= 120:
         clear()
         print("Insufficient Funds")
         await shop6()
-    elif choice == '2' and cash >= 300:
-        attack = attack + 25
-        cash = cash - 300
+    elif choice == '2' and cash >= 80:
+        apotion = apotion + 1
+        cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop6()
     elif choice == '2' and cash <= 80:
         clear()
@@ -672,22 +733,22 @@ async def shop5():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (15 hp): 150$ (1)\n\nMega Attack Boost (Rare, +25 attacks): 300$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
-    if choice == '1' and cash >= 150:
-        health = health + 15
-        cash = cash - 150
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    if choice == '1' and cash >= 120:
+        cash = cash - 120
+        hpotion2 = hpotion2 + 1
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (25hp)")
         await shop5()
-    elif choice == '1' and cash <= 150:
+    elif choice == '1' and cash <= 120:
         clear()
         print("Insufficient Funds")
         await shop5()
-    elif choice == '2' and cash >= 300:
-        attack = attack + 25
-        cash = cash - 300
+    elif choice == '2' and cash >= 80:
+        apotion = apotion + 1
+        cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop5()
     elif choice == '2' and cash <= 80:
         clear()
@@ -717,22 +778,22 @@ async def shop4():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (15 hp): 150$ (1)\n\nMega Attack Boost (Rare, +25 attacks): 300$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
-    if choice == '1' and cash >= 150:
-        health = health + 15
-        cash = cash - 150
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    if choice == '1' and cash >= 120:
+        cash = cash - 120
+        hpotion2 = hpotion2 + 1
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (25hp)")
         await shop4()
-    elif choice == '1' and cash <= 150:
+    elif choice == '1' and cash <= 120:
         clear()
         print("Insufficient Funds")
         await shop4()
-    elif choice == '2' and cash >= 300:
-        attack = attack + 25
-        cash = cash - 300
+    elif choice == '2' and cash >= 80:
+        apotion = apotion + 1
+        cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop4()
     elif choice == '2' and cash <= 80:
         clear()
@@ -762,22 +823,22 @@ async def shop3():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (15 hp): 150$ (1)\n\nMega Attack Boost (Rare, +25 attacks): 300$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
-    if choice == '1' and cash >= 150:
-        health = health + 15
-        cash = cash - 150
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    if choice == '1' and cash >= 120:
+        cash = cash - 120
+        hpotion2 = hpotion2 + 1
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (25hp)")
         await shop3()
-    elif choice == '1' and cash <= 150:
+    elif choice == '1' and cash <= 120:
         clear()
         print("Insufficient Funds")
         await shop3()
-    elif choice == '2' and cash >= 300:
-        attack = attack + 25
-        cash = cash - 300
+    elif choice == '2' and cash >= 80:
+        apotion = apotion + 1
+        cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop3()
     elif choice == '2' and cash <= 80:
         clear()
@@ -807,32 +868,32 @@ async def shop2():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Heal (5 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (15 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
+    choice = input("Heal (10 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
     if choice == '1' and cash >= 50:
-        health = health + 5
+        hpotion = hpotion + 1
         cash = cash - 50
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (10hp)")
         await shop2()
     elif choice == '1' and cash <= 50:
         clear()
         print("Insufficient Funds")
         await shop2()
     elif choice == '2' and cash >= 80:
-        attack = attack + 5
+        apotion = apotion + 1
         cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop2()
     elif choice == '2' and cash <= 80:
         clear()
         print("Insufficient Funds")
         await shop2()
     elif choice == '3' and cash >= 120:
-        health = health + 15
+        hpotion2 = hpotion2 + 1
         cash = cash - 120
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (25hp)")
         await shop2()
     elif choice == '3' and cash <= 120:
         clear()
@@ -847,38 +908,43 @@ async def shop2():
         await shop2()
 
 async def shop():
+    global health
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
     global cash
     global health
     global attack
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Heal (5 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (15 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
+    choice = input("Heal (10 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
     if choice == '1' and cash >= 50:
-        health = health + 5
+        hpotion = hpotion + 1
         cash = cash - 50
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (10hp)")
         await shop()
     elif choice == '1' and cash <= 50:
         clear()
         print("Insufficient Funds")
         await shop()
     elif choice == '2' and cash >= 80:
-        attack = attack + 5
+        apotion = apotion + 1
         cash = cash - 80
         clear()
-        print(f"Sucsesfully boosted your attacks, your attack is now {attack} ")
+        print(f"Sucsesfully bought Attack Potion (5 atk)")
         await shop()
     elif choice == '2' and cash <= 80:
         clear()
         print("Insufficient Funds")
         await shop()
     elif choice == '3' and cash >= 120:
-        health = health + 15
+        hpotion2 = hpotion2 + 1
         cash = cash - 120
         clear()
-        print(f"Sucsesfully healed, your health is now {health} ")
+        print(f"Sucsesfully bought Healing Potion (25hp)")
         await shop()
     elif choice == '3' and cash <= 120:
         clear()
@@ -895,35 +961,44 @@ async def shop():
 
 async def bag():
     global health
+    global attack
     global hpotion
     global hpotion2
     global hpotion3
     global hpotion4
+    global apotion
     global cash
-    hpotion = 0
-    hpotion2 = 0
-    hpotion3 = 0
-    hpotion4 = 0
-    ui = input(f"Healing Potion (10hp): {hpotion}\nHealing Potion 2 (25hp): {hpotion2}\nHealing Potion 3 (50hp): {hpotion3}\nHealing Potion 4 (100hp): {hpotion4}\nExit Bag (exit)\n\n")
+    hpotion = hpotion
+    hpotion2 = hpotion2
+    hpotion3 = hpotion3
+    hpotion4 = hpotion4
+    apotion = apotion
+    ui = input(f"Healing Potion 1 (10hp): {hpotion}\nHealing Potion 2 (25hp): {hpotion2}\nHealing Potion 3 (50hp): {hpotion3}\nHealing Potion 4 (100hp): {hpotion4}\nAttack Potion 5 (5 atk): {apotion}\nExit Bag (exit)\n\n")
     if ui == '1' and hpotion >= 1:
         hpotion = hpotion - 1
         health = health + 10
         print("Sucsesfully used item heal")
         print(f"Health: {health}")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '1' and hpotion <= 1:
         print("Insufficent Items")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '2' and hpotion2 >= 1:
         hpotion2 = hpotion2 - 1
         health = health + 25
         print("Sucsesfully used item heal")
         print(f"Health: {health}")
+        time.sleep(2)
+        clear()
+        await bag()
     elif ui == '2' and hpotion2 <= 1:
         print("Insufficent Items")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '3' and hpotion3 >= 1:
         hpotion3 = hpotion3 - 1
@@ -931,10 +1006,12 @@ async def bag():
         print("Sucsesfully used item heal")
         print(f"Health: {health}")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '3' and hpotion3 <= 1:
         print("Insufficent Items")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '4' and hpotion4 >= 1:
         hpotion4 = hpotion4 - 1
@@ -942,13 +1019,35 @@ async def bag():
         print("Sucsesfully used item heal")
         print(f"Health: {health}")
         time.sleep(2)
+        clear()
         await bag()
     elif ui == '4' and hpotion4 <= 1:
         print("Insufficent Items")
         time.sleep(2)
+        clear()
+        await bag()
+    elif ui == '5' and apotion >= 1:
+        apotion = apotion - 1
+        attack = attack + 5
+        print("Sucsesfully used attack boost")
+        print(f"Attack: {attack}")
+        time.sleep(2)
+        clear()
+        await bag()
+    elif ui == '5' and apotion <= 1:
+        print("Insufficent Items")
+        time.sleep(2)
+        clear()
         await bag()
     elif ui == 'exit':
         print("Alright")
+        time.sleep(2)
+        clear()
+    else:
+        print("Invalid Response")
+        time.sleep(2)
+        clear()
+        await bag()
 
 
 # async def enchants():

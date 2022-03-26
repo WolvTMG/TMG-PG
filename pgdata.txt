@@ -22,7 +22,9 @@ xp = 3		attack = 3
 
 bag items
 
-healingpot = 10 hp
-healingpot2 = 25 hp
-healingpot3 = 50 hp
-healingpot4 = 100 hp
+healingpot1 = 10 hp  50$
+healingpot2 = 25 hp  120$
+healingpot3 = 50 hp  300$
+healingpot4 = 100 hp 500$
+
+attackpot1 = 5 atk   80$
