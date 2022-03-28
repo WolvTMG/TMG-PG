@@ -38,7 +38,7 @@ randomizedcash = [50, 150, 200, 250]
 randomizedxp = [1, 2, 3, 4, 5, 6]
 randomizedattack = [1, 2, 3, 4]
 
-rounds = 5
+rounds1 = 5
 rounds2 = 5
 rounds3 = 5
 rounds4 = 5
@@ -48,11 +48,11 @@ rounds7 = 5
 rounds8 = 5
 
 
-hpotion = 0
+hpotion1 = 0
 hpotion2 = 0
 hpotion3 = 0
 hpotion4 = 0
-apotion = 0
+apotion1 = 0
 
 
 def loops():
@@ -93,7 +93,7 @@ async def arc7():
     global health
     global attack
     global xp
-    global rounds
+    global rounds7
     global cash
     global damage
     global gameround
@@ -156,6 +156,7 @@ async def arc7():
                 time.sleep(2)
             clear() 
         elif ui == 'bag':
+            rounds7 = rounds7 + 1
             clear()
             await bag()
         else:
@@ -171,7 +172,7 @@ async def arc6():
     global health
     global attack
     global xp
-    global rounds
+    global rounds6
     global cash
     global damage
     global gameround
@@ -232,6 +233,7 @@ async def arc6():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds6 = rounds6 + 1
             clear()
             await bag()
         else:
@@ -247,7 +249,7 @@ async def arc5():
     global health
     global attack
     global xp
-    global rounds
+    global rounds5
     global cash
     global damage
     global gameround
@@ -306,6 +308,7 @@ async def arc5():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds5 = rounds5 + 1
             clear()
             await bag()
         else:
@@ -321,7 +324,7 @@ async def arc4():
     global health
     global attack
     global xp
-    global rounds
+    global rounds4
     global cash
     global damage
     global gameround
@@ -381,6 +384,7 @@ async def arc4():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds4 = rounds4 + 1
             clear()
             await bag()
         else:
@@ -397,7 +401,7 @@ async def arc3():
     global health
     global attack
     global xp
-    global rounds
+    global rounds3
     global cash
     global subscribe_to_dream
     global gameround
@@ -455,6 +459,7 @@ async def arc3():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds3 = rounds3 + 1
             clear()
             await bag()
         else:
@@ -471,7 +476,7 @@ async def arc2():
     global health
     global attack
     global xp
-    global rounds
+    global rounds2
     global cash
     global gameround
     global subscribe_to_dream
@@ -529,6 +534,7 @@ async def arc2():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds2 = rounds2 + 1
             clear()
             await bag()
         else:
@@ -545,7 +551,7 @@ async def arc1():
     global health
     global attack
     global xp
-    global rounds
+    global rounds1
     global cash
     global gameround
     global subscribe_to_dream
@@ -554,7 +560,7 @@ async def arc1():
     print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing\n")
     time.sleep(4)
     clear()
-    for i in range(rounds):
+    for i in range(rounds1):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
         quest = random.choice(randomizedquests)
         luck = random.choice(randomizedluck)
@@ -603,12 +609,13 @@ async def arc1():
                 time.sleep(2)
             clear()
         elif ui == 'bag':
+            rounds1 = rounds1 + 1
             clear()
             await bag()
         else:
             clear()
             print("Answer must be attack or run")
-            rounds = rounds + 1
+            rounds1 = rounds1 + 1
             time.sleep(2)
             clear()
     time.sleep(2)
@@ -684,11 +691,11 @@ async def shop6():
     global cash
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -705,7 +712,7 @@ async def shop6():
         print("Insufficient Funds")
         await shop6()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -734,11 +741,11 @@ async def shop5():
     global cash
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -755,7 +762,7 @@ async def shop5():
         print("Insufficient Funds")
         await shop5()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -784,11 +791,11 @@ async def shop4():
     global cash
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -805,7 +812,7 @@ async def shop4():
         print("Insufficient Funds")
         await shop4()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -834,11 +841,11 @@ async def shop3():
     global cash
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -855,7 +862,7 @@ async def shop3():
         print("Insufficient Funds")
         await shop3()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -884,18 +891,18 @@ async def shop2():
     global cash
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
     choice = input("Heal (10 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
     if choice == '1' and cash >= 50:
-        hpotion = hpotion + 1
+        hpotion1 = hpotion1 + 1
         cash = cash - 50
         clear()
         print(f"Sucsesfully bought Healing Potion (10hp)")
@@ -905,7 +912,7 @@ async def shop2():
         print("Insufficient Funds")
         await shop2()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -934,11 +941,11 @@ async def shop2():
 
 async def shop():
     global health
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global cash
     global health
     global attack
@@ -947,7 +954,7 @@ async def shop():
     time.sleep(3)
     choice = input("Heal (10 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
     if choice == '1' and cash >= 50:
-        hpotion = hpotion + 1
+        hpotion1 = hpotion1 + 1
         cash = cash - 50
         clear()
         print(f"Sucsesfully bought Healing Potion (10hp)")
@@ -957,7 +964,7 @@ async def shop():
         print("Insufficient Funds")
         await shop()
     elif choice == '2' and cash >= 80:
-        apotion = apotion + 1
+        apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
@@ -988,27 +995,22 @@ async def shop():
 async def bag():
     global health
     global attack
-    global hpotion
+    global hpotion1
     global hpotion2
     global hpotion3
     global hpotion4
-    global apotion
+    global apotion1
     global cash
-    hpotion = hpotion
-    hpotion2 = hpotion2
-    hpotion3 = hpotion3
-    hpotion4 = hpotion4
-    apotion = apotion
-    ui = input(f"Healing Potion 1 (10hp): {hpotion}\nHealing Potion 2 (25hp): {hpotion2}\nHealing Potion 3 (50hp): {hpotion3}\nHealing Potion 4 (100hp): {hpotion4}\nAttack Potion 5 (5 atk): {apotion}\nExit Bag (exit)\n\n")
-    if ui == '1' and hpotion >= 1:
-        hpotion = hpotion - 1
+    ui = input(f"Healing Potion 1 (10hp): {hpotion1}\nHealing Potion 2 (25hp): {hpotion2}\nHealing Potion 3 (50hp): {hpotion3}\nHealing Potion 4 (100hp): {hpotion4}\nAttack Potion 5 (5 atk): {apotion1}\nExit Bag (exit)\n\n")
+    if ui == '1' and hpotion1 >= 1:
+        hpotion1 = hpotion1 - 1
         health = health + 10
         print("Sucsesfully used item heal")
         print(f"Health: {health}")
         time.sleep(2)
         clear()
         await bag()
-    elif ui == '1' and hpotion <= 1:
+    elif ui == '1' and hpotion1 <= 1:
         print("Insufficent Items")
         time.sleep(2)
         clear()
@@ -1052,15 +1054,15 @@ async def bag():
         time.sleep(2)
         clear()
         await bag()
-    elif ui == '5' and apotion >= 1:
-        apotion = apotion - 1
+    elif ui == '5' and apotion1 >= 1:
+        apotion1 = apotion1 - 1
         attack = attack + 5
         print("Sucsesfully used attack boost")
         print(f"Attack: {attack}")
         time.sleep(2)
         clear()
         await bag()
-    elif ui == '5' and apotion <= 1:
+    elif ui == '5' and apotion1 <= 1:
         print("Insufficent Items")
         time.sleep(2)
         clear()
