@@ -11,7 +11,7 @@ health = 10
 attack = 10
 xp = 0
 cash = 100
-gameround = 1
+gameround = 0
 subscribe_to_dream = 0
 dev = 0
 
@@ -1119,21 +1119,6 @@ async def devchoice():
         await devchoice()
 
 
-ui = int(input("Age: "))
-
-if ui < 13:
-    print("Age requirement not met [error code 1]")
-    sys.exit()
-elif ui > 100:
-    print("Age requirement not met [error code 2]")
-    sys.exit()
-else:
-    user = input("Username: ")
-
-names = ["James", "Jack", "Will", "Jonathon", "Max", "Michael"]
-begin = random.choice(names)
-
-
 def clear():
     system = os.name
     if system == 'nt':
@@ -1145,6 +1130,21 @@ def clear():
     else:
         print('\n'*120)
     return
+
+
+ui = int(input("Age: "))
+
+if ui < 13:
+    print("Age requirement not met [error code 1]")
+    sys.exit()
+elif ui > 100:
+    print("Age requirement not met [error code 2]")
+    sys.exit()
+else:
+    clear()
+
+names = ["James", "Jack", "Will", "Jonathon", "Max", "Michael"]
+begin = random.choice(names)
 
 
 async def start():
