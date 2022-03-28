@@ -684,6 +684,11 @@ async def shop6():
     global cash
     global health
     global attack
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global apotion
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -729,6 +734,11 @@ async def shop5():
     global cash
     global health
     global attack
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global apotion
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -774,6 +784,11 @@ async def shop4():
     global cash
     global health
     global attack
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global apotion
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -819,6 +834,11 @@ async def shop3():
     global cash
     global health
     global attack
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global apotion
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -864,6 +884,11 @@ async def shop2():
     global cash
     global health
     global attack
+    global hpotion
+    global hpotion2
+    global hpotion3
+    global hpotion4
+    global apotion
     global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
@@ -913,6 +938,7 @@ async def shop():
     global hpotion2
     global hpotion3
     global hpotion4
+    global apotion
     global cash
     global health
     global attack
