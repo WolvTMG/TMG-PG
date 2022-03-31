@@ -12,12 +12,12 @@ attack = 10
 xp = 0
 cash = 100
 gameround = 0
-subscribe_to_dream = 0
+
 dev = 0
 
-randomizedquests = ["You are encountered by a wild wolf, ", "A group of angry bears surround you, ",
+randomizedquests1 = ["You are encountered by a wild wolf, ", "A group of angry bears surround you, ",
 "You wake up in the back of a van and you don't remember much, ",
-"A large group of anti vax moms surround you because you're wearing a mask, "]
+"A large group of wolfs encounter you, "]
 randomizedquests2 = ["You run into a cult hideout, ", "A notorious murderer is 5 feet away staring at you, ",
 "Someone named Michael Myers is a few feet away from you with a knife in his hand, ",
 "Jason the killer is running towards you in the forest, ",
@@ -27,10 +27,13 @@ randomizedquests2 = ["You run into a cult hideout, ", "A notorious murderer is 5
 "A bunch of twitter users saw you having an opinion and are canceling you, "]
 randomizedquests3 = ["You wake up tied up with a bunch of mafia bosses above you talking about a deal, ",
 "You run into a cult hideout, ", "A zombie apocolypse breaks out and you and a few civilizations are left alive, "]
-randomizedquests4 = ["A furry thinks you're cute, ", "James Charles sent you (a minor) some questionable images, ",
-"Your mom saw your report card, ", "You see a minecraft youtuber walking in front of you, "]
-randomizedquests5 = ["You see a cringe fortnite kid dancing for a tik tok, "]
+randomizedquests4 = ["You run into the Joker's house, ", "A pack of dogs chase after you, ",
+"You see an angry mob, ", "You run into the mafia's hideout and are caught, "]
+randomizedquests5 = ["You see a strange figure lurking around the corner every step you take, ",
+"You anger the Mafia boss and he pulls a gun on you, "]
 randomizedquests6 = ["I ran out of questions, "]
+randomizedquests7 = ["I ran out of questions, "]
+
 randomizedluck = ["attack", "attack", "run"]
 randomizednumbers = [1, 2, 3, 4, 5, 6]
 randomizeddamages = [1, 2, 3, 4, 5, 6]
@@ -53,6 +56,10 @@ hpotion2 = 0
 hpotion3 = 0
 hpotion4 = 0
 apotion1 = 0
+
+
+upgrade1 = 0
+upgrade2 = 0
 
 
 def loops():
@@ -97,7 +104,7 @@ async def arc7():
     global cash
     global damage
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 7)")
     print("WARNING, damage, cash, xp and attacks will now be randomized from now on")
@@ -142,11 +149,11 @@ async def arc7():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + rcash
                 xp = xp + rxp
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -176,7 +183,7 @@ async def arc6():
     global cash
     global damage
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 6)")
     print("You will now recieve randomized cash")
@@ -219,11 +226,11 @@ async def arc6():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + rcash
                 xp = xp + 6
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -253,7 +260,7 @@ async def arc5():
     global cash
     global damage
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 5)")
     time.sleep(4)
@@ -294,11 +301,11 @@ async def arc5():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + 100
                 xp = xp + 5
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -328,7 +335,7 @@ async def arc4():
     global cash
     global damage
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 4)")
     print("WARNING, attacks will now be randomized from 1 - 6 damage")
@@ -370,11 +377,11 @@ async def arc4():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + 80
                 xp = xp + 4
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -403,7 +410,7 @@ async def arc3():
     global xp
     global rounds3
     global cash
-    global subscribe_to_dream
+    global upgrade1
     global gameround
     gameround = gameround + 1
     print("(Arc 3)")
@@ -445,11 +452,11 @@ async def arc3():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + 60
                 xp = xp + 3
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -479,7 +486,7 @@ async def arc2():
     global rounds2
     global cash
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 2)")
     print("WARNING, in arc 2 rewards are doubled but so is damage to your health")
@@ -520,11 +527,11 @@ async def arc2():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + 40
                 xp = xp + 2
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -540,7 +547,7 @@ async def arc2():
         else:
             clear()
             print("Answer must be attack or run")
-            rounds = rounds + 1
+            rounds2 = rounds2 + 1
             time.sleep(2)
             clear()
     time.sleep(2)
@@ -554,7 +561,7 @@ async def arc1():
     global rounds1
     global cash
     global gameround
-    global subscribe_to_dream
+    global upgrade1
     gameround = gameround + 1
     print("(Arc 1)")
     print("WARNING, game saves once process is terminated, always wait after the process has stopped before closing\n")
@@ -562,7 +569,7 @@ async def arc1():
     clear()
     for i in range(rounds1):
         print(f"Health: {health}\nAttack: {attack}\nExperience: {xp}\nCash: {cash}\n")
-        quest = random.choice(randomizedquests)
+        quest = random.choice(randomizedquests1)
         luck = random.choice(randomizedluck)
         time.sleep(1)
         ui = input(quest + "\nAttack / Run / Bag \n\nChoice: ").lower()
@@ -595,11 +602,11 @@ async def arc1():
             time.sleep(2)
             clear()
         elif ui == 'run' and luck == 'attack':
-            if subscribe_to_dream > 0:
+            if upgrade1 > 0:
                 print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
                 cash = cash + 20
                 xp = xp + 1
-                subscribe_to_dream = subscribe_to_dream - 1
+                upgrade1 = upgrade1 - 1
                 time.sleep(2)
                 clear()
             else:
@@ -696,11 +703,11 @@ async def shop6():
     global hpotion3
     global hpotion4
     global apotion1
-    global subscribe_to_dream
+    global upgrade1
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nLeave the store: (exit)\n\n").lower()
     if choice == '1' and cash >= 120:
         cash = cash - 120
         hpotion2 = hpotion2 + 1
@@ -721,14 +728,6 @@ async def shop6():
         clear()
         print("Insufficient Funds")
         await shop6()
-    elif choice == '3' and cash >= 500:
-        cash = cash - 500
-        subscribe_to_dream = subscribe_to_dream + 5
-        print(f"Sucsesfully subscribed to Dream")
-        await shop6()
-    elif choice == '3' and cash <=500:
-        print("Insufficient Funds")
-        await shop6()
     elif choice == 'exit':
         clear()
         await arc7()
@@ -746,11 +745,11 @@ async def shop5():
     global hpotion3
     global hpotion4
     global apotion1
-    global subscribe_to_dream
+    global upgrade1
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nLeave the store: (exit)\n\n").lower()
     if choice == '1' and cash >= 120:
         cash = cash - 120
         hpotion2 = hpotion2 + 1
@@ -769,14 +768,6 @@ async def shop5():
         await shop5()
     elif choice == '2' and cash <= 80:
         clear()
-        print("Insufficient Funds")
-        await shop5()
-    elif choice == '3' and cash >= 500:
-        cash = cash - 500
-        subscribe_to_dream = subscribe_to_dream + 5
-        print(f"Sucsesfully subscribed to Dream")
-        await shop5()
-    elif choice == '3' and cash <=500:
         print("Insufficient Funds")
         await shop5()
     elif choice == 'exit':
@@ -796,11 +787,11 @@ async def shop4():
     global hpotion3
     global hpotion4
     global apotion1
-    global subscribe_to_dream
+    global upgrade1
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nLeave the store: (exit)\n\n").lower()
     if choice == '1' and cash >= 120:
         cash = cash - 120
         hpotion2 = hpotion2 + 1
@@ -819,14 +810,6 @@ async def shop4():
         await shop4()
     elif choice == '2' and cash <= 80:
         clear()
-        print("Insufficient Funds")
-        await shop4()
-    elif choice == '3' and cash >= 500:
-        cash = cash - 500
-        subscribe_to_dream = subscribe_to_dream + 5
-        print(f"Sucsesfully subscribed to Dream")
-        await shop4()
-    elif choice == '3' and cash <=500:
         print("Insufficient Funds")
         await shop4()
     elif choice == 'exit':
@@ -846,11 +829,11 @@ async def shop3():
     global hpotion3
     global hpotion4
     global apotion1
-    global subscribe_to_dream
+    global upgrade1
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nSubscribe to Dream: 500$ (3) \n\nLeave the store: (exit)\n\n").lower()
+    choice = input("Mega Heal (25 hp): 120$ (1)\n\nAttack Boost (5 Attacks): 80$ (2)\n\nLeave the store: (exit)\n\n").lower()
     if choice == '1' and cash >= 120:
         cash = cash - 120
         hpotion2 = hpotion2 + 1
@@ -871,14 +854,6 @@ async def shop3():
         clear()
         print("Insufficient Funds")
         await shop3()
-    elif choice == '3' and cash >= 500:
-        cash = cash - 500
-        subscribe_to_dream = subscribe_to_dream + 5
-        print(f"Sucsesfully subscribed to Dream")
-        await shop3()
-    elif choice == '3' and cash <=500:
-        print("Insufficient Funds")
-        await shop3()
     elif choice == 'exit':
         clear()
         await arc4()
@@ -896,7 +871,6 @@ async def shop2():
     global hpotion3
     global hpotion4
     global apotion1
-    global subscribe_to_dream
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
@@ -1078,25 +1052,36 @@ async def bag():
         await bag()
 
 
-# async def enchants():
-#     global enchantments
-#     global cash
-#     enchant_1 = 0
-#     while enchant_1 == 0:
-#         enchant1 = input("Enchantment 1 = 500$, would you like to purchase? ").lower()
-#         if enchant1 == 'yes' and cash >= 500:
-#             cash = cash - 500
-#             enchant1 = enchant1 + 1
-#         else:
-#             enchants()
-#     enchant_2 = 0
-#     while enchant_2 == 0:
-#         enchant2 = input("Enchantment 2 = 750$, would you like to purchase? ").lower()
-#         if enchant2 == 'yes' and cash >= 750:
-#             cash = cash - 750
-#             enchant2 = enchant2 + 1
-#         else:
-#             enchants()
+async def upgrades():
+    global upgrade1
+    global upgrade2
+    global cash
+
+    print("You will be able to acess the Uprades Shop every 5 rounds")
+    time.sleep(2)
+    clear()
+
+    upgrade1 = upgrade1
+    while upgrade1 == 0:
+        upg1 = input("Upgrade 1 = 80 percent higher to escape attacks = 500$, would you like to purchase? ").lower()
+        if upg1 == 'yes' and cash >= 500:
+            cash = cash - 500
+            upgrade1 = upgrade1 + 1
+        elif upg1 == 'no':
+            pass
+        else:
+            upgrades()
+    
+    upgrade2 = upgrade2
+    while upgrade2 == 0:
+        upg2 = input("Upgrade 2 = 80 percent higher to sucsesfully kill enemies = 750$, would you like to purchase? ").lower()
+        if upg2 == 'yes' and cash >= 750:
+            cash = cash - 750
+            upgrade2 = upgrade2 + 1
+        elif upg2 == 'no':
+            pass
+        else:
+            upgrades()
     
 
 async def devchoice():
