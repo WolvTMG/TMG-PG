@@ -1,3 +1,4 @@
+from cmath import inf
 import random
 import sys
 import time
@@ -14,6 +15,7 @@ cash = 100
 gameround = 0
 
 dev = 0
+inf = 0
 
 randomizedquests1 = ["You are encountered by a wild wolf, ", "A group of angry bears surround you, ",
 "You wake up in the back of a van and you don't remember much, ",
@@ -76,7 +78,7 @@ def loops2():
     global attack
     i = 1
     while i == 1:
-        if dev == 1:
+        if inf == 1:
             cash = cash + 999999999
             xp = xp + 999999999
             health = health + 999999999
@@ -150,7 +152,7 @@ async def arc7():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + rcash
                 xp = xp + rxp
                 upgrade1 = upgrade1 - 1
@@ -227,7 +229,7 @@ async def arc6():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + rcash
                 xp = xp + 6
                 upgrade1 = upgrade1 - 1
@@ -250,7 +252,7 @@ async def arc6():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice6()
+    await choice()
 
 async def arc5():
     global health
@@ -302,7 +304,7 @@ async def arc5():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + 100
                 xp = xp + 5
                 upgrade1 = upgrade1 - 1
@@ -325,7 +327,7 @@ async def arc5():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice5()
+    await choice()
 
 async def arc4():
     global health
@@ -378,7 +380,7 @@ async def arc4():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + 80
                 xp = xp + 4
                 upgrade1 = upgrade1 - 1
@@ -401,7 +403,7 @@ async def arc4():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice4()
+    await choice()
 
 
 async def arc3():
@@ -453,7 +455,7 @@ async def arc3():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + 60
                 xp = xp + 3
                 upgrade1 = upgrade1 - 1
@@ -476,7 +478,7 @@ async def arc3():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice3()
+    await choice()
         
 
 async def arc2():
@@ -528,7 +530,7 @@ async def arc2():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + 40
                 xp = xp + 2
                 upgrade1 = upgrade1 - 1
@@ -551,7 +553,7 @@ async def arc2():
             time.sleep(2)
             clear()
     time.sleep(2)
-    await choice2()
+    await choice()
 
 
 async def arc1():
@@ -603,7 +605,7 @@ async def arc1():
             clear()
         elif ui == 'run' and luck == 'attack':
             if upgrade1 > 0:
-                print("The attacker was too disgusted to run after you because you were subscribed to Dream you fat fuck ")
+                print("Upgrade 1 sucsesfully used ")
                 cash = cash + 20
                 xp = xp + 1
                 upgrade1 = upgrade1 - 1
@@ -629,60 +631,38 @@ async def arc1():
     await choice()
 
 
-async def choice6():
-    y = input("Would you like to visit the shop? ").lower()
-    if y == 'yes':
-        await shop6()
-    elif y == 'no':
-        await arc7()
-    else:
-        await choice6()
-
-
-async def choice5():
-    y = input("Would you like to visit the shop? ").lower()
-    if y == 'yes':
-        await shop5()
-    elif y == 'no':
-        await arc6()
-    else:
-        await choice5()
-
-async def choice4():
-    y = input("Would you like to visit the shop? ").lower()
-    if y == 'yes':
-        await shop4()
-    elif y == 'no':
-        await arc5()
-    else:
-        await choice4()
-        
-async def choice3():
-    y = input("Would you like to visit the shop? ").lower()
-    if y == 'yes':
-        await shop3()
-    elif y == 'no':
-        await arc4()
-    else:
-        await choice3()
-
-async def choice2():
-    y = input("Would you like to visit the shop? ").lower()
-    if y == 'yes':
-        await shop2()
-    elif y == 'no':
-        await arc3()
-    else:
-        await choice2()
-
 async def choice():
     y = input("Would you like to visit the shop? ").lower()
     if y == 'yes':
-        await shop()
+        if gameround == 1:
+            await shop1()
+        elif gameround == 2:
+            await shop2()
+        elif gameround == 3:
+            await shop3()
+        elif gameround == 4:
+            await shop4()
+        elif gameround == 5:
+            await upgchoice()
+        elif gameround == 6:
+            await shop6()
     elif y == 'no':
-        await arc2()
+        if gameround == 1:
+            await arc2()
+        elif gameround == 2:
+            await arc3()
+        elif gameround == 3:
+            await arc4()
+        elif gameround == 4:
+            await arc5()
+        elif gameround == 5:
+            await arc6()
+        elif gameround == 6:
+            await arc7()
+        elif gameround == 7:
+            await arc8()
     else:
-        await choice()
+        choice()
 
 
 async def shop7():
@@ -913,7 +893,7 @@ async def shop2():
         print("Please make sure you enter a valid item number (1, 2, 3, exit)\n")
         await shop2()
 
-async def shop():
+async def shop1():
     global health
     global hpotion1
     global hpotion2
@@ -926,44 +906,44 @@ async def shop():
     print(f"Balance: {cash}\n")
     print("WARNING, purchases are 1 time, 1 only, no refunds\n")
     time.sleep(3)
-    choice = input("Heal (10 hp): 50$ (1)\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
+    choice = input(f"Heal (10 hp): 50$ (1)                                       Health: {health}\n\nAttack Boost (5 attacks): 80$ (2)\n\nMega Heal (25 hp): 120$ (3)\n\nExit Shop: free, or is it? (exit)\n\n").lower()
     if choice == '1' and cash >= 50:
         hpotion1 = hpotion1 + 1
         cash = cash - 50
         clear()
         print(f"Sucsesfully bought Healing Potion (10hp)")
-        await shop()
+        await shop1()
     elif choice == '1' and cash <= 50:
         clear()
         print("Insufficient Funds")
-        await shop()
+        await shop1()
     elif choice == '2' and cash >= 80:
         apotion1 = apotion1 + 1
         cash = cash - 80
         clear()
         print(f"Sucsesfully bought Attack Potion (5 atk)")
-        await shop()
+        await shop1()
     elif choice == '2' and cash <= 80:
         clear()
         print("Insufficient Funds")
-        await shop()
+        await shop1()
     elif choice == '3' and cash >= 120:
         hpotion2 = hpotion2 + 1
         cash = cash - 120
         clear()
         print(f"Sucsesfully bought Healing Potion (25hp)")
-        await shop()
+        await shop1()
     elif choice == '3' and cash <= 120:
         clear()
         print("Insufficient Funds")
-        await shop()
+        await shop1()
     elif choice == 'exit':
         clear()
         await arc2()
     else:
         clear()
         print("Please make sure you enter a valid item number (1, 2, 3, exit)\n")
-        await shop()
+        await shop1()
 
 
 async def bag():
@@ -1052,6 +1032,22 @@ async def bag():
         await bag()
 
 
+async def upgchoice():
+    y = input("Would you like to visit the upgrades shop or the normal shop? upgrades / shop: ").lower()
+    if y == 'upgrades':
+        print("Alright")
+        time.sleep(2)
+        clear()
+        await upgrades()
+    elif y == 'shop':
+        print("Alright")
+        time.sleep(2)
+        clear()
+        await shop5()
+    else:
+        await upgchoice()
+
+
 async def upgrades():
     global upgrade1
     global upgrade2
@@ -1061,44 +1057,58 @@ async def upgrades():
     time.sleep(2)
     clear()
 
-    upgrade1 = upgrade1
-    while upgrade1 == 0:
-        upg1 = input("Upgrade 1 = 80 percent higher to escape attacks = 500$, would you like to purchase? ").lower()
-        if upg1 == 'yes' and cash >= 500:
-            cash = cash - 500
-            upgrade1 = upgrade1 + 1
-        elif upg1 == 'no':
-            pass
-        else:
-            upgrades()
-    
-    upgrade2 = upgrade2
-    while upgrade2 == 0:
-        upg2 = input("Upgrade 2 = 80 percent higher to sucsesfully kill enemies = 750$, would you like to purchase? ").lower()
-        if upg2 == 'yes' and cash >= 750:
-            cash = cash - 750
-            upgrade2 = upgrade2 + 1
-        elif upg2 == 'no':
-            pass
-        else:
-            upgrades()
+    upg1 = input("Upgrade 1 (1)\nUpgrade 2 (2)\nExit (exit)\n\n").lower()
+    if upg1 == '1' and cash >= 500:
+        cash = cash - 500
+        upgrade1 = upgrade1 + 1
+        await upgrades()
+    elif upg1 == '2':
+        cash = cash - 750
+        upgrade2 = upgrade2 + 1
+        await upgrades()
+    elif upg1 == 'exit':
+        if gameround == 5:
+            await arc6()
+        elif gameround == 10:
+            print("Not out yet son")
+    else:
+        print("Invalid Input")
+        time.sleep(2)
+        await upgrades()
     
 
 async def devchoice():
+    global gameround
+    global inf
+
+    infchoice = input("Would you like infinite cash? ")
+    if infchoice == 'yes':
+        inf = inf + 1
+    elif infchoice == 'no':
+        inf = inf
+    else:
+        await devchoice()
+
     choice = input("Which arc would you like to explore? ")
     if choice == '1':
         await arc1()
     elif choice == '2':
+        gameround - gameround + 1
         await arc2()
     elif choice == '3':
+        gameround = gameround + 2
         await arc3()
     elif choice == '4':
+        gameround = gameround + 3
         await arc4()
     elif choice == '5':
+        gameround = gameround + 4
         await arc5()
     elif choice == '6':
+        gameround = gameround + 5
         await arc6()
     elif choice == '7':
+        gameround = gameround + 6
         await arc7()
     else:
         await devchoice()
