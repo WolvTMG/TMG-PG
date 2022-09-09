@@ -7,7 +7,6 @@ import os
 import json
 from _thread import *
 
-
 health = 10
 attack = 10
 xp = 0
@@ -52,17 +51,14 @@ rounds6 = 5
 rounds7 = 5
 rounds8 = 5
 
-
 hpotion1 = 0
 hpotion2 = 0
 hpotion3 = 0
 hpotion4 = 0
 apotion1 = 0
 
-
 upgrade1 = 0
 upgrade2 = 0
-
 
 def loops():
     while True:
@@ -662,7 +658,7 @@ async def choice():
         elif gameround == 7:
             await arc8()
     else:
-        choice()
+        await choice()
 
 
 async def shop7():
